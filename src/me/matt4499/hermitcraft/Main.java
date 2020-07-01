@@ -14,15 +14,15 @@ public class Main extends JavaPlugin {
 	public void onEnable() { //Called when the plugin is enabled/loaded
 		plugin = this;
 		Bukkit.getServer().getPluginManager().registerEvents(new MobKillListener(), this); //Register our event with bukkit so it fires
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[mPlugin] Successfully registered MobKillListener for: Mob Heads"); //Print a neat message to console	
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[mHermitCraft] Successfully registered MobKillListener for: Mob Heads"); //Print a neat message to console	
 		Bukkit.getServer().getPluginManager().registerEvents(new BedEnterListener(), this); //Register our event with bukkit so it fires
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[mPlugin] Successfully registered BedEnterListener for: One Player Sleep"); //Print a neat message to console
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[mHermitCraft] Successfully registered BedEnterListener for: One Player Sleep"); //Print a neat message to console
 	}
 	
 	@Override // Using @Override annotation while overriding a method is considered as a best practice for coding in java
 	public void onDisable() { //Called when the plugin is disabled/unloaded
 		EntityDeathEvent.getHandlerList().unregister(this); //Gets all handlers listening to EntityDeathEvent, and removes us from that list
 		PlayerBedEnterEvent.getHandlerList().unregister(this); // same as that ^ 
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[mPlugin] Successfully unregistered events! Bye bye!"); //Print a neat message to console
+		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[mHermitCraft] Successfully unregistered events! Bye bye!"); //Print a neat message to console
 	}
 }
