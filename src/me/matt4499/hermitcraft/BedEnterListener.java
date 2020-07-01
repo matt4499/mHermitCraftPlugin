@@ -21,7 +21,7 @@ public class BedEnterListener implements Listener {
 				public void run() { //what to run once the delay is up
 					if(event.getPlayer().isSleeping()) { //make sure the player is still sleeping, and didnt leave the bed
 						Bukkit.getServer().getConsoleSender().sendMessage("[mDebug] " + event.getPlayer().getDisplayName() + " is still sleeping. changing time...");
-						Bukkit.getServer().getWorld("world").setTime(0);
+						Bukkit.getServer().getWorld("world").setTime(0); //set the time to day
 						Bukkit.getServer().broadcastMessage(event.getPlayer().getDisplayName() + " slept and skipped night time!"); //anounce the change
 						debounce = false; //reset the debounce, the next event will be at night time anyways /shrug
 					} else {
