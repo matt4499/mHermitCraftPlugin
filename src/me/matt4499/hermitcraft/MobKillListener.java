@@ -37,7 +37,7 @@ public class MobKillListener implements Listener { //The class must implement Li
 				ItemStack ElytraItem = new ItemStack(Material.ELYTRA);
 				event.getDrops().add(ElytraItem);
 			default:
-				Bukkit.getServer().getConsoleSender().sendMessage("[mHermitcraft] A mob who is not supported yet, has been killed.");
+				Bukkit.getServer().getConsoleSender().sendMessage("[mHermitcraft] An unsupported mob has been killed.");
 				return;
 		}
 	}
