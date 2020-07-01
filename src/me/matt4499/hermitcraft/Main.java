@@ -12,7 +12,7 @@ public class Main extends JavaPlugin {
 	
 	@Override // Using @Override annotation while overriding a method is considered as a best practice for coding in java
 	public void onEnable() { //Called when the plugin is enabled/loaded
-		plugin = this;
+		plugin = this; //setting our static Plugin above to an instance of this very JavaPlugin class.
 		Bukkit.getServer().getPluginManager().registerEvents(new MobKillListener(), this); //Register our event with bukkit so it fires
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[mHermitCraft] Successfully registered MobKillListener for: Mob Heads"); //Print a neat message to console	
 		Bukkit.getServer().getPluginManager().registerEvents(new BedEnterListener(), this); //Register our event with bukkit so it fires
