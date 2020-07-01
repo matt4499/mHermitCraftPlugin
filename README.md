@@ -5,6 +5,8 @@ It currently has two features:
 
 - One Player Sleep
   > Only 1 player has to be sleeping in order to change the time to day.
+  > Checks if a player is still sleeping before changing the time
+  > Only changes the time once, incase multiple people sleep at the same time.
 
 - Mob Head Drops
   > Drops mob heads when a player kills them. (Not all mobs added yet)
