@@ -3,7 +3,7 @@
 
 This is a Minecraft 1.16.1 plugin for Spigot/Paper/Bukkit with heavily commented code incase you're a learner.
 
-It currently has three features:
+It currently has a couple features:
 
 ## One Player Sleep
 
@@ -23,3 +23,25 @@ Drops mob heads when they're killed by players.
 Apparently they do this in HermitCraft.
 
 - Future versions will allow this to be toggled
+
+## Shulker Drop Changes
+
+- Makes shulkers drop 2 shells on death
+
+## Anti Endermen Grief
+
+- Prevents endermen from taking random blocks
+
+## Disables fire tick/fire spread
+
+- Disables fire from spreading
+
+## World Border in overworld
+
+Sets the world border on server start
+
+- Centered @ 0, 0
+- 12k size, 6k out in each direction
+
+
+
