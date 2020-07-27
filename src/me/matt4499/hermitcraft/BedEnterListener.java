@@ -13,7 +13,7 @@ public class BedEnterListener implements Listener {
 	public void onBedEnter(PlayerBedEnterEvent event) { //when a player attempts to enter a bed
 		if(event.getBedEnterResult() == BedEnterResult.OK) { //and they dont get cancelled (i.e. due to Monsters too close, too far away)
 			if(debounce) { //debouncing meaning whether or not somebody is already sleeping/has entered a bed recently
-				event.getPlayer().sendMessage("[Sleep] Someone else is currently sleeping, waiting for time change...");
+				event.getPlayer().sendMessage("[Sleep] Someone else is currently sleeping, waiting for time/weather change...");
 				return; //if somebody else is already sleeping, dont run anymore code
 			}
 			debounce = true; //activate debounce so it can't be ran multiple times, wait until a already sleeping player finishes the event
@@ -21,8 +21,9 @@ public class BedEnterListener implements Listener {
 				public void run() { //what to run once the delay is up
 					if(event.getPlayer().isSleeping()) { //make sure the player is still sleeping, and didnt leave the bed
 						Bukkit.getServer().getConsoleSender().sendMessage("[mDebug] " + event.getPlayer().getDisplayName() + " is still sleeping. changing time...");
-						Bukkit.getServer().getWorld("world").setTime(0);
-						Bukkit.getServer().broadcastMessage(event.getPlayer().getDisplayName() + " slept and skipped night time!"); //anounce the change
+						event.getPlayer().getWorld().setTime(0);
+						event.getPlayer().getWorld().setStorm(false);
+						Bukkit.getServer().broadcastMessage(event.getPlayer().getDisplayName() + " slept and skipped night time/reset weather!"); //anounce the change
 						debounce = false; //reset the debounce, the next event will be at night time anyways /shrug
 					} else {
 						Bukkit.getServer().getConsoleSender().sendMessage("[mDebug] " + event.getPlayer().getDisplayName() + " got out of bed. not changing time.");

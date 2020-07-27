@@ -50,6 +50,8 @@ public class NametagListener implements Listener { //credit to JoelGodOfwar for 
 				if(hand == "off") { //if they were holding the nametag in the off hand
 					player.getInventory().remove(player.getInventory().getItemInOffHand()); //remove it
 				}
+				//Right here is where you would want to "silence" event.getRightClicked()
+				//i tried **several** different things and none worked on paper spigot 1.16.1
 			}
 			
 	}
