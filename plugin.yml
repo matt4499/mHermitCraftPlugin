@@ -1,7 +1,13 @@
 main: me.matt4499.hermitcraft.Main
-name: mPlugin
-version: 1.0.0
+name: mHermitCraft
+version: 1.0.2
 description: coded for a knockoff hermitcraft server
 api-version: 1.16
 author: Matt4499
 website: github.com/Matt4499
+commands:
+   invsee:
+     description: admin only
+     usage: Syntax error!
+   afk:
+     description: mark yourself as afk
